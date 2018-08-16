@@ -1,7 +1,7 @@
 # Minimum version can be no higher than 3.5 as Ubuntu package management uses this version.
 cmake_minimum_required(VERSION 3.5)
 
-project (EX10-WindChillIndex)
+project (EX02-WindChillIndex)
 
 set(SOURCE_PREFIX "windchillindex")
 set(EXEC_NAME "WindChillIndex")
