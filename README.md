@@ -10,7 +10,7 @@ to get started.
 Be sure that you fork the project first and use the URL from
 the forked project when you clone it in CLion.
 
-This assignment is based on the Programming Project 7 from Chapter3 of the text book, _Absolute CC++_, on page 139 (5th Edition). This project acted as a basis for this assignment, and as such the description here is the source of truth. Remember: when in doubt consult this assignment description.   
+This assignment is based on the Programming Project 7 from Chapter 3 of the text book, _Absolute C++_, on page 139 (5th Edition). This project acted as a basis for this assignment, and as such the description here is the source of truth. Remember: when in doubt consult this assignment description.   
 
 ### Writing the code for this Project
 
