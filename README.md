@@ -4,7 +4,7 @@ The objective of this project is to create your first C++ function and familiari
 
 The first thing you will need to do is fork and clone this assignment
 from GitHub. Follow the instructions 
-[here](https://github.com/sbcc-cs140-fall2018/HowToStartEveryProject)
+[here](https://github.com/vcc-csv13-fall2018/HowToStartEveryProject)
 to get started. 
 
 Be sure that you fork the project first and use the URL from
@@ -15,7 +15,7 @@ takes into account the wind speed and the temperature. The index provides a
 measure of the chilling effect of wind at a given air temperature. Wind chill may
 be approximated by the following formula,
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;w= 33 - \frac{(10\sqrt{v}-v + 10.5)(33 - t)}{23.1}" title="Wind Chill Index" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;w=33-\frac{(10\sqrt{v}-v + 10.5)(33-t)}{23.1}" title="Wind Chill Index" />
 
 where
 
@@ -103,7 +103,7 @@ In the **Run** view below the code you should see the output
 of running the program. It should look something like this:
 
 ```bash
-/Users/username/githubusername/cs140-ex02-windchillindex/cmake-build-debug/bin/WindChillIndex
+/Users/username/githubusername/ex02-windchillindex/cmake-build-debug/bin/WindChillIndex
 The wind chill index is: 11.5
 
 Process finished with exit code 0
@@ -120,7 +120,7 @@ see the output of running these tests. It should look something
 like this:
 
 ```bash
-/home/aknight/xormasters/cs140-ex02-windchillindex/cmake-build-debug/bin/WindChillIndex_GTest
+/home/aknight/xormasters/ex02-windchillindex/cmake-build-debug/bin/WindChillIndex_GTest
 Running main() from gtest_main.cc
 [==========] Running 2 tests from 1 test case.
 [----------] Global test environment set-up.
@@ -162,4 +162,4 @@ and press **OK**. This step will run the tests again, check that everything is O
 and then submit them to the cloud to have the tests run for grading.
 
 If you do not understand these directions, or wish to do them on the command
-line rather than in CLion, then read these [directions](https://github.com/sbcc-cs140-fall2018/Course-Information/wiki/How-to-Turn-In-Every-Project).
+line rather than in CLion, then read these [directions](https://github.com/vcc-csv13-fall2018/Course-Information/wiki/How-to-Turn-In-Every-Project).
