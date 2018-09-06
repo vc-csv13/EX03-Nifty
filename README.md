@@ -10,7 +10,23 @@ to get started.
 Be sure that you fork the project first and use the URL from
 the forked project when you clone it in CLion.
 
-This assignment is based on the Programming Project 7 from Chapter 3 of the text book, _Absolute C++_, on page 139 (5th Edition). This project acted as a basis for this assignment, and as such the description here is the source of truth. Remember: when in doubt consult this assignment description.   
+In cold weather, meteorologists report an index called the wind chill factor , which
+takes into account the wind speed and the temperature. The index provides a
+measure of the chilling effect of wind at a given air temperature. Wind chill may
+be approximated by the following formula,
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;w= 33 - \frac{(10\sqrt{v}-v + 10.5)(33 - t)}{23.1}" title="Wind Chill Index" />
+
+where
+
+_v_ = wind speed in m/sec \
+_t_ = temperature in degrees Celsius: t 6= 10 \
+_w_ = wind chill index (in degrees Celsius)
+
+Write a function that returns the wind chill index. Your code should ensure that
+the restriction on the temperature is not violated. Look up some weather reports
+in back issues of a newspaper in your library and compare the wind chill index you
+calculate with the result reported in the newspaper.
 
 ### Writing the code for this Project
 

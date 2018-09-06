@@ -27,9 +27,9 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-// A unit tester for EX05-String in CS140 at Santa Barbara City College.
+// A unit tester for EX02-WindChillIndex in CSV13 at Ventura College.
 //
-// Author: ahknight@pipeline.sbcc.edu (Allan Knight)
+// Author: aknight@vcccd.edu (Allan Knight)
 
 
 // Includes for google test and the unit under test.
@@ -50,7 +50,7 @@ double computeWindChillIndexMaster(double temperature, double windVelocity) {
     return 33.0 - ((10.0 * sqrt(windVelocity) - windVelocity) * (33.0 - temperature)) / 23.1;
 }
 
-using edu::sbcc::cs140::computeWindChillIndex;
+using edu::vcccd::vc::csv13::computeWindChillIndex;
 
 // Tests edu::sbcc:cs140::String.
 
