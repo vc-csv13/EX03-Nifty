@@ -15,7 +15,7 @@ takes into account the wind speed and the temperature. The index provides a
 measure of the chilling effect of wind at a given air temperature. Wind chill may
 be approximated by the following formula,
 
-<img src="https://latex.codecogs.com/png.latex?\Large&space;w=33-\frac{(10\sqrt{v}-v + 10.5)(33-t)}{23.1}"/>
+![Wind Chill Index](https://github.com/sbcc-cs140-fall2018/Course-Information/wiki/images/windchillindex.png)
 
 where
 
