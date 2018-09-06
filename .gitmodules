@@ -1,3 +1,0 @@
-[submodule "githooks"]
-	path = githooks
-	url = https://github.com/sbcc-cs140-fall2018/githooks.git
