@@ -15,9 +15,7 @@ takes into account the wind speed and the temperature. The index provides a
 measure of the chilling effect of wind at a given air temperature. Wind chill may
 be approximated by the following formula,
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;w=33-\frac{(10\sqrt{v}-v + 10.5)(33-t)}{23.1}" title="Wind Chill Index" />
-
-<svg height='28.6767pt' version='1.1' viewBox='-0.239051 -0.229996 208.197 28.6767' width='208.197pt' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<img src="<svg height='28.6767pt' version='1.1' viewBox='-0.239051 -0.229996 208.197 28.6767' width='208.197pt' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
 <defs>
 <path d='M7.87846 -2.74969C8.08169 -2.74969 8.29689 -2.74969 8.29689 -2.98879S8.08169 -3.2279 7.87846 -3.2279H1.41071C1.20747 -3.2279 0.992279 -3.2279 0.992279 -2.98879S1.20747 -2.74969 1.41071 -2.74969H7.87846Z' id='g0-0'/>
 <path d='M4.65056 10.2217L2.54645 5.57111C2.46276 5.37983 2.40299 5.37983 2.36712 5.37983C2.35517 5.37983 2.29539 5.37983 2.16389 5.47547L1.02814 6.33624C0.872727 6.45579 0.872727 6.49166 0.872727 6.52752C0.872727 6.5873 0.908593 6.65903 0.992279 6.65903C1.06401 6.65903 1.26725 6.49166 1.39875 6.39601C1.47049 6.33624 1.64981 6.20473 1.78132 6.10909L4.13649 11.2857C4.22017 11.477 4.27995 11.477 4.38755 11.477C4.56687 11.477 4.60274 11.4052 4.68643 11.2379L10.1141 0C10.1978 -0.167372 10.1978 -0.215193 10.1978 -0.239103C10.1978 -0.358655 10.1021 -0.478207 9.95866 -0.478207C9.86301 -0.478207 9.77933 -0.418431 9.68369 -0.227148L4.65056 10.2217Z' id='g0-112'/>
@@ -67,7 +65,7 @@ be approximated by the following formula,
 <use x='175.695' xlink:href='#g1-58' y='79.6541'/>
 <use x='178.935' xlink:href='#g2-49' y='79.6541'/>
 </g>
-</svg>
+</svg>" />
 
 where
 
