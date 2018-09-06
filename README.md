@@ -20,7 +20,7 @@ be approximated by the following formula,
 where
 
 _v_ = wind speed in m/sec \
-_t_ = temperature in degrees Celsius: t 6= 10 \
+_t_ = temperature in degrees Celsius: _t_ <= 10 \
 _w_ = wind chill index (in degrees Celsius)
 
 Write a function that returns the wind chill index. Your code should ensure that
