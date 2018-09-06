@@ -16,6 +16,7 @@ measure of the chilling effect of wind at a given air temperature. Wind chill ma
 be approximated by the following formula,
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;w=33-\frac{(10\sqrt{v}-v + 10.5)(33-t)}{23.1}" title="Wind Chill Index" />
+
 <svg height='28.6767pt' version='1.1' viewBox='-0.239051 -0.229996 208.197 28.6767' width='208.197pt' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
 <defs>
 <path d='M7.87846 -2.74969C8.08169 -2.74969 8.29689 -2.74969 8.29689 -2.98879S8.08169 -3.2279 7.87846 -3.2279H1.41071C1.20747 -3.2279 0.992279 -3.2279 0.992279 -2.98879S1.20747 -2.74969 1.41071 -2.74969H7.87846Z' id='g0-0'/>
