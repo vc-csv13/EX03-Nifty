@@ -26,6 +26,16 @@ TThe objective of this project is to create your first C++ function and familiar
  in back issues of a newspaper in your library and compare the wind chill index you
  calculate with the result reported in the newspaper.
  
+### Getting Started
+
+The first thing you will need to do is accept the invitation to this assignment
+from GitHub Classroom. You can click [here](https://classroom.github.com/a/BsNR5j9E) to accept the invitation, and then
+follow the instructions [here](https://github.com/vc-csv30-spring2019/Course-Information/wiki)
+to get started. 
+
+Be sure that you accept the invitation first and use the URL from
+the your new project when you clone it in CLion.
+
 ### Writing the code for this Project
 
 Writing the code for this project is very simple. You will create three files: a header and implementation of a function, and an implementation of main to test your personally test your code.
