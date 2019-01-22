@@ -45,9 +45,9 @@
 namespace {
 
 double computeWindChillIndexMaster(double temperature, double windVelocity) {
-    if (temperature > 10.0) return FLT_MIN;
+    if (temperature > 10.0) return -1.0;
 
-    return 33.0 - ((10.0 * sqrt(windVelocity) - windVelocity) * (33.0 - temperature)) / 23.1;
+    return 33.0 - ((10.0 * sqrt(windVelocity) - windVelocity + 10.5) * (33.0 - temperature)) / 23.1;
 }
 
 using edu::vcccd::vc::csv13::computeWindChillIndex;
