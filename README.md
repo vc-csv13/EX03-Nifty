@@ -1,33 +1,31 @@
 ## Exercise: WindChillIndex (25 Points)
 
-The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
-
-The first thing you will need to do is fork and clone this assignment
-from GitHub. Follow the instructions 
-[here](https://github.com/vcc-csv13-fall2018/HowToStartEveryProject)
-to get started. 
-
-Be sure that you fork the project first and use the URL from
-the forked project when you clone it in CLion.
-
-In cold weather, meteorologists report an index called the wind chill factor , which
-takes into account the wind speed and the temperature. The index provides a
-measure of the chilling effect of wind at a given air temperature. Wind chill may
-be approximated by the following formula,
-
-![Wind Chill Index](https://github.com/sbcc-cs140-fall2018/Course-Information/wiki/images/windchillindex.png)
-
-where
-
-_v_ = wind speed in m/sec \
-_t_ = temperature in degrees Celsius: _t_ <= 10 \
-_w_ = wind chill index (in degrees Celsius)
-
-Write a function that returns the wind chill index. Your code should ensure that
-the restriction on the temperature is not violated. Look up some weather reports
-in back issues of a newspaper in your library and compare the wind chill index you
-calculate with the result reported in the newspaper.
-
+TThe objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
+ 
+ The first thing you will need to do is fork and clone this assignment
+ from GitHub.  
+ 
+ Be sure that you fork the project first and use the URL from
+ the forked project when you clone it in CLion.
+ 
+ In cold weather, meteorologists report an index called the wind chill factor , which
+ takes into account the wind speed and the temperature. The index provides a
+ measure of the chilling effect of wind at a given air temperature. Wind chill may
+ be approximated by the following formula,
+ 
+ ![Wind Chill Index](https://github.com/sbcc-cs140/Course-Information/wiki/images/windchillindex.png)
+ 
+ where
+ 
+ _v_ = wind speed in m/sec \
+ _t_ = temperature in degrees Celsius: _t_ <= 10 \
+ _w_ = wind chill index (in degrees Celsius)
+ 
+ Write a function that returns the wind chill index. Your code should ensure that
+ the restriction on the temperature is not violated. Look up some weather reports
+ in back issues of a newspaper in your library and compare the wind chill index you
+ calculate with the result reported in the newspaper.
+ 
 ### Writing the code for this Project
 
 Writing the code for this project is very simple. You will create three files: a header and implementation of a function, and an implementation of main to test your personally test your code.
@@ -65,7 +63,7 @@ use the `.cc` extension. Select `.cc` in the **Type** drop-down
 and press **OK**. You should now see the file `windchillindex.cc` (or whatever you named the file) in
 the project explorer in the `src` directory.
 
-Write your implementation of the `computerWindChillIndex` in here in the `edu::sbcc::cs140` namepspace.
+Write your implementation of the `computerWindChillIndex` in here in the `edu::vcccd::vc::csv13` namepspace.
 
 #### main()
 
@@ -150,16 +148,15 @@ assignment minus code styling points which I will add later.
 
 ### Submitting the code for this project
 
-At the bottom of CLion there should be a view tab labeled **Version Control**.
-Select this tab at the bottom of the screen. You should see a tab called **Local Changes**.
-Under **Unversion Files** you should have one file: `main.cc`.
-Select these files and right-click on them. In the drop-down menu
-select **Add to VCS**. Next, right-click on these files again, which should
-now be under **Default** and select **Commit**. Add the appropriate
-commit message and click **OK**. Finally, right click on the committed files,
-select `Git -> Repository -> Push...`. Follow the onscreen directions
-and press **OK**. This step will run the tests again, check that everything is OK
-and then submit them to the cloud to have the tests run for grading.
+Before submitting your code the first time, you will need to add a webhook to this project to trigger the build in the cloud. This process is simple, and only required once per assignment. First, go to the **Settings** tab at the top of this page. It's right next to **Insights**. Then along the left side select **Webhooks**. On the Webhooks page click **Add Webhook** and copy http://209.129.49.16:8080/github-webhook/ into the **Payload URL** input box and then click **Add Webhook**. That's it. Every time you push code now, a new build will test your latest changes. The results are pasted to the #build channel in slack.
+
+First, right click on the project name, then select `Git -> Commit Directory...`. 
+Make sure only the files you want to push are selected, `main.cc`. Then uncheck `Perform code analysis` and `Check TODO`. It's OK to leave them checked, but committing will take longer. Leave `Run git hooks` unchecked as well. Put a message in `Commit Message` and then press the **Commit** button. If anything goes wrong check the _Version Control_ view
+in the lower left corner and select the _Console_ tab.
+ 
+Finally, right click on the project name, then select `Git -> Repository -> Push...`. Follow the onscreen directions
+and press **OK**. This step will then submit them to the cloud to have the tests run for grading. You can find your results
+in the [#build](https://vc-csv13-spring2019.slack.com/messages/CFBKTRAAU) channel on slack.
 
 If you do not understand these directions, or wish to do them on the command
-line rather than in CLion, then read these [directions](https://github.com/vcc-csv13-fall2018/Course-Information/wiki/How-to-Turn-In-Every-Project).
+line rather than in CLion, then read these [directions](https://github.com/vc-csv13-spring2019/Course-Information/wiki/How-to-Turn-In-Every-Project).
