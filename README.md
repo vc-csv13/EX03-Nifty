@@ -1,6 +1,6 @@
 ## Exercise: WindChillIndex (25 Points)
 
-TThe objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
+The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
  
  In cold weather, meteorologists report an index called the wind chill factor , which
  takes into account the wind speed and the temperature. The index provides a
