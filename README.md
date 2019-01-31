@@ -2,12 +2,6 @@
 
 TThe objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
  
- The first thing you will need to do is fork and clone this assignment
- from GitHub.  
- 
- Be sure that you fork the project first and use the URL from
- the forked project when you clone it in CLion.
- 
  In cold weather, meteorologists report an index called the wind chill factor , which
  takes into account the wind speed and the temperature. The index provides a
  measure of the chilling effect of wind at a given air temperature. Wind chill may
@@ -29,9 +23,7 @@ TThe objective of this project is to create your first C++ function and familiar
 ### Getting Started
 
 The first thing you will need to do is accept the invitation to this assignment
-from GitHub Classroom. You can click [here](https://classroom.github.com/a/BsNR5j9E) to accept the invitation, and then
-follow the instructions [here](https://github.com/vc-csv30-spring2019/Course-Information/wiki)
-to get started. 
+from GitHub Classroom. You can click [here](https://classroom.github.com/a/BsNR5j9E) to accept the invitation. 
 
 Be sure that you accept the invitation first and use the URL from
 the your new project when you clone it in CLion.
