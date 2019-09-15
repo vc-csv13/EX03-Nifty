@@ -124,18 +124,18 @@ like this:
 Running main() from gtest_main.cc
 [==========] Running 2 tests from 1 test case.
 [----------] Global test environment set-up.
-[----------] 2 tests from WindChillIndexTest
-[ RUN      ] WindChillIndexTest.Basic
-[       OK ] WindChillIndexTest.Basic (0 ms)
-[ RUN      ] WindChillIndexTest.TemperatureOutOfRange
-[       OK ] WindChillIndexTest.TemperatureOutOfRange (0 ms)
+[----------] 2 tests from BabylonianSquareRootFixture
+[ RUN      ] BabylonianSquareRootFixture.Basic
+[       OK ] BabylonianSquareRootFixture.Basic (0 ms)
+[ RUN      ] BabylonianSquareRootFixture.TemperatureOutOfRange
+[       OK ] BabylonianSquareRootFixture.TemperatureOutOfRange (0 ms)
 
 Your unit test score is 20 out of 20
 The assignment is worth a total of 25 where the remaining points
 comes from grading related to documentation, algorithms, and other
 criteria.
 
-[----------] 2 tests from WindChillIndexTest (0 ms total)
+[----------] 2 tests from BabylonianSquareRootFixture (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 2 tests from 1 test case ran. (1 ms total)
