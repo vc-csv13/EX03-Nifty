@@ -48,8 +48,6 @@ using std::string;
 
 using namespace ::testing_internal;
 
-#define SQRT_REGEX "[\\d]+(\\.[\\d]+)?\\s*$"
-
 class NiftyFixture : public ::testing::Test {
 protected:
     static const uint MAX_TESTED_SCORE = 20;
@@ -145,13 +143,15 @@ TEST_F(NiftyFixture, Population) {
 
     for (int i = 0; i < 10; i++) {
         std::string result = GetLine(_parent_read);
-        std::regex square_regex("(\\d)[\\D]+([\\d]+)[\\D]+([\\d]+(\\.[\\d]+%)?)");
+        std::regex regex("(\\d)[\\D]+([\\d]+)[\\D]+([\\d]+(\\.[\\d]+%)?)");
         std::smatch match;
-        if (std::regex_search(result, match, square_regex)) {
-            EXPECT_STREQ(EXPECTED_RESULTS[i][0], match[1].str().c_str());
-            EXPECT_STREQ(EXPECTED_RESULTS[i][1], match[2].str().c_str());
-            EXPECT_STREQ(EXPECTED_RESULTS[i][2], match[3].str().c_str());
-            _testScore += 2;
+        if (std::regex_search(result, match, regex)) {
+            bool succeeded = true;
+            for (int j = 0; j < 3; j++) {
+                EXPECT_STREQ(EXPECTED_RESULTS[i][j], match[j+1].str().c_str());
+                succeeded = succeeded && match[j+1].str() == EXPECTED_RESULTS[i][j];
+            }
+            _testScore += succeeded ? 2 : 0;
         } else {
             std::cerr << "No match for row " << (i + 1) << std::endl;
         }
