@@ -1,6 +1,6 @@
 ## Exercise: Nifty (25 Points)
 
-The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
+The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch and reading data from files.
  
 ### Problem Description
 
