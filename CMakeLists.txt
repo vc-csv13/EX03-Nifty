@@ -1,10 +1,10 @@
 # Minimum version can be no higher than 3.5 as Ubuntu package management uses this version.
 cmake_minimum_required(VERSION 3.5)
 
-project (EX02-BabylonianSquareRoot)
+project (EX03-Nifty)
 
-set(SOURCE_PREFIX "babyloniansquareroot")
-set(EXEC_NAME "BabylonianSquareRoot")
+set(SOURCE_PREFIX "nifty")
+set(EXEC_NAME "Nifty")
 set(CMAKE_CXX_STANDARD 11)
 
 if(EXISTS ${CMAKE_HOME_DIRECTORY}/csv13-lib/CMakeLists.txt)

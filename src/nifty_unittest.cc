@@ -37,12 +37,10 @@
 #include <climits>
 #include <cmath>
 #include <regex>
-#include <ext/stdio_filebuf.h>
 
 #include "gtest/gtest.h"
-namespace {
 
-// Tests edu::sbcc:cs140::String.
+namespace {
 
 using std::istringstream;
 using std::ostringstream;
@@ -52,7 +50,7 @@ using namespace ::testing_internal;
 
 #define SQRT_REGEX "[\\d]+(\\.[\\d]+)?\\s*$"
 
-class BabylonianSquareRootFixture : public ::testing::Test {
+class NiftyFixture : public ::testing::Test {
 protected:
     static const uint MAX_TESTED_SCORE = 20;
     static const uint MAX_OVERALL_SCORE = 25;
@@ -61,6 +59,18 @@ protected:
     int _parent_write;
 
 protected:
+    std::string GetLine(int fd) {
+        char buffer[BUFSIZ];
+        //memset(buffer, 0, BUFSIZ);
+
+        for (int total = 0, read = 1; read > 0; total += read) {
+            read = ::read(_parent_read, buffer + total, 1);
+            if (buffer[total] == '\n') break;
+        }
+
+        return std::string(buffer);
+    }
+
     void SetUp() override {
         int writepipe[2] = {-1, -1};
         int readpipe[2] = {-1, -1};
@@ -90,7 +100,7 @@ protected:
             close(child_read);
             close(child_write);
 
-            execl("./BabylonianSquareRoot", "./BabylonianSquareRoot", NULL);
+            execl("./Nifty", "./Nifty", "../population_data.csv", NULL);
         } else {
             close(child_read);
             close(child_write);
@@ -117,101 +127,35 @@ protected:
     }
 };
 
-uint BabylonianSquareRootFixture::_testScore = 0;
+uint NiftyFixture::_testScore = 0;
 
-TEST_F(BabylonianSquareRootFixture, SquareRoot2) {
+TEST_F(NiftyFixture, Population) {
     // This test is named "Positive", and belongs to the "HelloWorld"
     // test case.
+    const char *EXPECTED_RESULTS[][3] = {{"0",   "0",  "0.0%"},
+                                         {"1", "807", "28.9%"},
+                                         {"2", "425", "15.2%"},
+                                         {"3", "392", "14.0%"},
+                                         {"4", "273",  "9.8%"},
+                                         {"5", "259",  "9.3%"},
+                                         {"6", "187",  "6.7%"},
+                                         {"7", "150",  "5.4%"},
+                                         {"8", "158",  "5.7%"},
+                                         {"9", "143",  "5.1%"}};
 
-    __gnu_cxx::stdio_filebuf<char> in(_parent_read, std::ios::in); // 1
-    std::istream child_in(&in);
-
-    __gnu_cxx::stdio_filebuf<char> out(_parent_write, std::ios::out); // 1
-    std::ostream child_out(&out);
-
-    child_out << "2" << std::endl;
-
-    std::string prompt;
-    std::getline(child_in, prompt);
-    std::regex square_regex(SQRT_REGEX);
-    std::smatch match;
-    if (std::regex_search(prompt, match, square_regex)) {
-        EXPECT_STREQ("1.41421", match.str().c_str());
-        _testScore += 4;
-    } else {
-        std::cerr << "No match for square root of 2" << std::endl;
-    }
-}
-
-TEST_F(BabylonianSquareRootFixture, SquareRoot16) {
-        // This test is named "Positive", and belongs to the "HelloWorld"
-        // test case.
-
-        __gnu_cxx::stdio_filebuf<char> in(_parent_read, std::ios::in); // 1
-        std::istream child_in(&in);
-
-        __gnu_cxx::stdio_filebuf<char> out(_parent_write, std::ios::out); // 1
-        std::ostream child_out(&out);
-
-        child_out << "16" << std::endl;
-
-        std::string prompt;
-        std::getline(child_in, prompt);
-        std::regex square_regex(SQRT_REGEX);
+    for (int i = 0; i < 10; i++) {
+        std::string result = GetLine(_parent_read);
+        std::regex square_regex("(\\d)[\\D]+([\\d]+)[\\D]+([\\d]+(\\.[\\d]+%)?)");
         std::smatch match;
-        if (std::regex_search(prompt, match, square_regex)) {
-            EXPECT_STREQ("4", match.str().c_str());
-            _testScore += 5;
+        if (std::regex_search(result, match, square_regex)) {
+            EXPECT_STREQ(EXPECTED_RESULTS[i][0], match[1].str().c_str());
+            EXPECT_STREQ(EXPECTED_RESULTS[i][1], match[2].str().c_str());
+            EXPECT_STREQ(EXPECTED_RESULTS[i][2], match[3].str().c_str());
+            _testScore += 2;
         } else {
-            std::cerr << "No match for square root of 16" << std::endl;
+            std::cerr << "No match for row " << (i + 1) << std::endl;
         }
     }
-
-    TEST_F(BabylonianSquareRootFixture, SquareRoot625) {
-        // This test is named "Positive", and belongs to the "HelloWorld"
-        // test case.
-
-        __gnu_cxx::stdio_filebuf<char> in(_parent_read, std::ios::in); // 1
-        std::istream child_in(&in);
-
-        __gnu_cxx::stdio_filebuf<char> out(_parent_write, std::ios::out); // 1
-        std::ostream child_out(&out);
-
-        child_out << "625" << std::endl;
-
-        std::string prompt;
-        std::getline(child_in, prompt);
-        std::regex square_regex(SQRT_REGEX);
-        std::smatch match;
-        if (std::regex_search(prompt, match, square_regex)) {
-            EXPECT_STREQ("25.2973", match.str().c_str());
-            _testScore += 6;
-        } else {
-            std::cerr << "No match for square of 625" << std::endl;
-        }
 }
 
-TEST_F(BabylonianSquareRootFixture, SquareRootNegative) {
-    // This test is named "Positive", and belongs to the "HelloWorld"
-    // test case.
-
-    __gnu_cxx::stdio_filebuf<char> in(_parent_read, std::ios::in); // 1
-    std::istream child_in(&in);
-
-    __gnu_cxx::stdio_filebuf<char> out(_parent_write, std::ios::out); // 1
-    std::ostream child_out(&out);
-
-    child_out << "-2" << std::endl;
-
-    std::string prompt;
-    std::getline(child_in, prompt);
-    std::regex square_regex("-?[\\d]+\\s*$");
-    std::smatch match;
-    if (std::regex_search(prompt, match, square_regex)) {
-        EXPECT_STREQ("-1", match.str().c_str());
-        _testScore += 5;
-    } else {
-        std::cerr << "No match for square of 625" << std::endl;
-    }
-}
 }

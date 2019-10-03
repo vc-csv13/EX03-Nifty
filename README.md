@@ -1,25 +1,30 @@
-## Exercise: WindChillIndex (25 Points)
+## Exercise: Nifty (25 Points)
 
 The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
  
- In cold weather, meteorologists report an index called the wind chill factor , which
- takes into account the wind speed and the temperature. The index provides a
- measure of the chilling effect of wind at a given air temperature. Wind chill may
- be approximated by the following formula,
- 
- ![Wind Chill Index](https://github.com/sbcc-cs140/Course-Information/wiki/images/windchillindex.png)
- 
- where
- 
- _v_ = wind speed in m/sec \
- _t_ = temperature in degrees Celsius: _t_ <= 10 \
- _w_ = wind chill index (in degrees Celsius)
- 
- Write a function that returns the wind chill index. Your code should ensure that
- the restriction on the temperature is not violated. Look up some weather reports
- in back issues of a newspaper in your library and compare the wind chill index you
- calculate with the result reported in the newspaper.
- 
+### Problem Description
+
+This problem is based on a “Nifty Assignment” by Steve Wolfman 
+([http://nifty.stanford.edu/2006/wolfman-pretid](http://nifty.stanford.edu/2006/wolfman-pretid)). 
+Consider lists of numbers from real-life data sources, for example, a 
+list containing the number of students enrolled in different course 
+sections, the number of comments posted for different Facebook status 
+updates, the number of books in different library holdings, the number 
+of votes per precinct, etc. It might seem like the leading digit of each 
+number in the list should be 1–9 with an equally likely probability. 
+However, Benford’s Law states that the leading digit is 1 about 30% of 
+the time and drops with larger digits. The leading digit is 9 only about 
+5% of the time. 
+
+Write a program that tests Benford’s Law. Collect a list of at least one 
+hundred numbers from some real-life data source and enter them into a 
+text file. Your pro-gram should loop through the list of numbers and 
+count how many times 1 is the first digit, 2 is the first digit, etc. 
+For each digit, output the percentage it appears as the first digit. If 
+you read a number into the string variable named strNum then you can 
+access the first digit as a char by using strNum[0]. This is described 
+in more detail in Chapter 9.  
+
 ### Getting Started
 
 The first thing you will need to do is accept the invitation to this assignment
@@ -28,51 +33,22 @@ from GitHub Classroom. You can click [here](https://classroom.github.com/a/BsNR5
 Be sure that you accept the invitation first and use the URL from
 the your new project when you clone it in CLion.
 
+### Getting Started
+
+The first thing you will need to do is accept the invitation to this 
+assignment from GitHub Classroom. You can click 
+[here](https://classroom.github.com/a/58TIHTBb) to accept the 
+invitation, and get started.
+
+Be sure that you accept the invitation first and use the URL to your new project when you clone it in CLion. After copying
+the URL into the clipboard, in CLion click **VCS -> Checkout from Version Control -> Git**. Paste the URL into the **URL** box of the _Clone Repository_ dialog box and press **Clone**.
+
 ### Writing the code for this Project
 
-Writing the code for this project is very simple. You will create three files: a header and implementation of a function, and an implementation of main to test your personally test your code.
-
-#### computeWindChillIndex
-
-This function will compute the wind chill index (and return it as a `double`) based on two input parameters (of type `double`), the current temperature, in C, and the wind speed in m/s. This index is valid only for temperatures below 10 degrees C, inclusive. If the temperature is greater than that, then the function should return -1 to indicate invalid input.
-
-To create this function you'll need a header file with a declaration so it can be used in other code, and an implementation file with the C++ code of this function.
-
-##### windchillindex.h
-
-First you'll need to create windchillindex.h. This is the only file that must be named exactly this. If you misspell, or use differenct capitalization, the test program will not compile.
-
-In CLion in the project explorer, right-click the `include` directory
-and chose `New => C++ Header File`. 
-
-Under **Name** fill in
-windchillindex. CLion will add the `.h` extension. Press **OK**. You should now see the file `windchillindex.h` in
-the project explorer in the `include` directory.
-
-Write your declaration of the `computerWindChillIndex` in here in the `edu::sbcc::cs140` namepspace.
-
-##### Implementation
-
-Next you'll need to create the implementation, separately from the declaration, of the computeWindChillIndex. This can be done in any file in the `src` directory as long as it has the extension `.cc` and is not named `main.cc`. 
-
 In CLion in the project explorer, right-click the `src` directory
-and chose `New => C++ Source File`. 
+and chose `New => C/C++ Source File`. 
 
-Under **Name** fill in
-windchillindex (or any other name besides `main`). CLion will add the extension, but by default 
-adds the `.cpp` extension. All projects in this class will
-use the `.cc` extension. Select `.cc` in the **Type** drop-down
-and press **OK**. You should now see the file `windchillindex.cc` (or whatever you named the file) in
-the project explorer in the `src` directory.
-
-Write your implementation of the `computerWindChillIndex` in here in the `edu::vcccd::vc::csv13` namepspace.
-
-#### main()
-
-If you want to test this code yourself, without using the unit tests, which I recommend for at least the first few projects, then you will need to create a `main()` function in a file named `main.cc` in the `src` directory. It is very important that you name it exactly this way, or things might not compile properly.
-
-In CLion in the project explorer, right-click the `src` directory
-and chose `New => C++ Source File`. 
+![Adding source file](https://github.com/sbcc-cs140-fall2018/Course-Information/wiki/images/03_new_source_file.png)
 
 Under **Name** fill in
 main. CLion will add the extension, but by default 
@@ -81,84 +57,117 @@ use the `.cc` extension. Select `.cc` in the **Type** drop-down
 and press **OK**. You should now see the file `main.cc` in
 the project explorer in the `src` directory.
 
-Your main function should look something like this:
+Copy and paste the following code into this file over any
+contents that may already be in the `main.cc` file.
 
 ```cpp
-#include "windchillindex.h"
+/**
+ * CS V30 Beginning C++
+ * Assignment: Nifty
+ * 
+ * Statement of code ownership: I hereby state that I have written all of this
+ * code and I have not copied this code from any other person or source.
+ * 
+ * @author [CHANGE THIS TO YOUR INFORMATION]
+ */
 
-int main() {
-  // Put your code here that calls computeWindChillIndex with some valid input and write the result to the terminal.
-  
-  return 0;
+#include <iostream>
+#include <iomanip>
+
+int main(int argc, char *argv[]) {
+    // Put your code for this project here.
+    return 0;
 }
 ```
+
+Now go through **main.cc** and change the [CHANGE THIS TO YOUR INFORMATION] text to your name and email address.
+
+Next, write your code that prints a string to the console with the computed letter size in `int main` between the curly braces.
 
 ### Running the code for this project
 
 Running this code should be straightforward. In the drop-down 
 menu in the upper right-hand corner you should see a *Run
-Configuration* called `WindChillIndex | Debug`. Make sure this 
+Configuration* called `Nifty [population] | Debug`. Make sure this 
 configuration is selected and press the play button next to it.
 In the **Run** view below the code you should see the output 
 of running the program. It should look something like this:
 
-```bash
-/Users/username/githubusername/ex02-windchillindex/cmake-build-debug/bin/WindChillIndex
-The wind chill index is: 11.5
+Using the test input, your output should look like:
+
+```
+/tmp/tmp.iJP6dUckGb/cmake-build-debug/../bin/Nifty population_data.csv
+ 0:   0	 0.0%
+ 1: 807	28.9%
+ 2: 425	15.2%
+ 3: 392	14.0%
+ 4: 273	 9.8%
+ 5: 259	 9.3%
+ 6: 187	 6.7%
+ 7: 150	 5.4%
+ 8: 158	 5.7%
+ 9: 143	 5.1%
 
 Process finished with exit code 0
 ```
+
 Success! Now you can move on to testing your code.
 
 ### Testing the code for this project
 
 Testing the code for this project is similar to running your code
 as outlined above. In the drop-down menu in the upper right-hand
-corner select the configuration `WindChillIndex_Gtest` and press the 
+corner select the target `All in Nifty Test | Debug` and press the 
 play button next to it. In the **Run** view below the code you should
 see the output of running these tests. It should look something
 like this:
 
 ```bash
-/home/aknight/xormasters/ex02-windchillindex/cmake-build-debug/bin/WindChillIndex_GTest
+Testing started at 8:33 PM ...
+/tmp/tmp.iJP6dUckGb/cmake-build-debug/../bin/Nifty_GTest --gtest_filter=* --gtest_color=no
 Running main() from gtest_main.cc
-[==========] Running 2 tests from 1 test case.
-[----------] Global test environment set-up.
-[----------] 2 tests from BabylonianSquareRootFixture
-[ RUN      ] BabylonianSquareRootFixture.Basic
-[       OK ] BabylonianSquareRootFixture.Basic (0 ms)
-[ RUN      ] BabylonianSquareRootFixture.TemperatureOutOfRange
-[       OK ] BabylonianSquareRootFixture.TemperatureOutOfRange (0 ms)
 
 Your unit test score is 20 out of 20
 The assignment is worth a total of 25 where the remaining points
 comes from grading related to documentation, algorithms, and other
 criteria.
 
-[----------] 2 tests from BabylonianSquareRootFixture (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (1 ms total)
-[  PASSED  ] 2 tests.
 
 Process finished with exit code 0
-
 ```
 
-Remember, You should also see your score for this
-assignment minus code styling points which I will add later.
+### Pushing your code to GitHub
 
-### Submitting the code for this project
+Now you need to turn in your code by sending, or pushing, your code to GitHub. You created a 
+GitHub repository when you started the assignment. Now you need to take your local code changes
+and send them to GitHub so that you can turn it in and have it graded in the next step in the
+work flow.
 
-Before submitting your code the first time, you will need to add a webhook to this project to trigger the build in the cloud. This process is simple, and only required once per assignment. First, go to the **Settings** tab at the top of this page. It's right next to **Insights**. Then along the left side select **Webhooks**. On the Webhooks page click **Add Webhook** and copy http://209.129.49.16:8080/github-webhook/ into the **Payload URL** input box and then click **Add Webhook**. That's it. Every time you push code now, a new build will test your latest changes. The results are pasted to the #build channel in slack.
+The first step is to commit your code locally. This tell git what files you want to turn in. In 
+this case you only need to turn in the contents of `main.cc`. In the Project view, right-
+click **EX03-Nifty** and then select **Git -> Commit Directory...**. In the dialog box that
+pops up, be sure only `main.cc` is selected and that there is some text in the _Commit 
+Message_ box. A good commit message would be something like `Committing code to get a good grade`.
 
-First, right click on the project name, then select `Git -> Commit Directory...`. 
-Make sure only the files you want to push are selected, `main.cc`. Then uncheck `Perform code analysis` and `Check TODO`. It's OK to leave them checked, but committing will take longer. Leave `Run git hooks` unchecked as well. Put a message in `Commit Message` and then press the **Commit** button. If anything goes wrong check the _Version Control_ view
-in the lower left corner and select the _Console_ tab.
- 
-Finally, right click on the project name, then select `Git -> Repository -> Push...`. Follow the onscreen directions
-and press **OK**. This step will then submit them to the cloud to have the tests run for grading. You can find your results
-in the [#build](https://vc-csv13-spring2019.slack.com/messages/CFBKTRAAU) channel on slack.
+Once the commit is finished, which is a purely local action, you need to send that commit to 
+GitHub. This is called the push phase of the process. Again right-click on **EX03-Nifty**.
+Then select **Git -> Repository -> Push**. In the dialog box that pops up, push the **Push** button
+and that should be it. You should see a message that says the push was successful. In the next
+step you'll confirm that your code is working and then submit it for a grade.
 
-If you do not understand these directions, or wish to do them on the command
-line rather than in CLion, then read these [directions](https://github.com/vc-csv13-spring2019/Course-Information/wiki/How-to-Turn-In-Every-Project).
+### Turning in and Grading your code
+
+Go back to LazyGrader and login again, if needed. Press the _Build_ button next to 
+**EX03-Nifty** for this course. This will send a command to Jenkins to download your code
+from GitHub and test it. If all goes well and all the tests pass, the ball next to the _Build_
+will turn blue. If some of the tests don't pass the ball will be yellow. If the ball is grey,
+that means you have not run the tests before and your project is not ready for grading.
+
+Once the Jenkins status is blue or yellow, press the _Grade_ button for **EX03-Nifty**.
+This will read the results from Jenkins and send your grade to Canvas. Once the notification in 
+LazyGrader says the grade has been posted, you should see your grade on Canvas.
+
+That's it, once you've submitted your grade, you are done. I will add points later, after I
+inspect your code. For example, most projects will be out of a total of 25 points, but after 
+pressing the _Grade_ button, Canvas will show 20 points. I will add up to 5 points after I have
+looked at your code and am conviced it is original.
