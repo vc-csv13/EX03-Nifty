@@ -56,6 +56,8 @@ protected:
     int _parent_read;
     int _parent_write;
 
+
+
 protected:
     std::string GetLine(int fd) {
         char buffer[BUFSIZ];
