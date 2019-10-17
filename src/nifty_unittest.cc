@@ -130,27 +130,27 @@ uint NiftyFixture::_testScore = 0;
 TEST_F(NiftyFixture, Population) {
     // This test is named "Positive", and belongs to the "HelloWorld"
     // test case.
-    const char *EXPECTED_RESULTS[][3] = {{"0",   "0",  "0.0%"},
-                                         {"1", "807", "28.9%"},
-                                         {"2", "425", "15.2%"},
-                                         {"3", "392", "14.0%"},
-                                         {"4", "273",  "9.8%"},
-                                         {"5", "259",  "9.3%"},
-                                         {"6", "187",  "6.7%"},
-                                         {"7", "150",  "5.4%"},
-                                         {"8", "158",  "5.7%"},
-                                         {"9", "143",  "5.1%"}};
+    int EXPECTED_RESULTS[][3] = {{0,   0,  10},
+                                 {1, 800, 100},
+                                 {2, 425, 100},
+                                 {3, 375,  75},
+                                 {4, 275,  75},
+                                 {5, 250,  75},
+                                 {6, 180,  50},
+                                 {7, 160,  50},
+                                 {8, 155,  25},
+                                 {9, 140,  25}};
 
     for (int i = 0; i < 10; i++) {
         std::string result = GetLine(_parent_read);
         std::regex regex("(\\d)[\\D]+([\\d]+)[\\D]+([\\d]+(\\.[\\d]+%)?)");
         std::smatch match;
         if (std::regex_search(result, match, regex)) {
-            bool succeeded = true;
-            for (int j = 0; j < 3; j++) {
-                EXPECT_STREQ(EXPECTED_RESULTS[i][j], match[j+1].str().c_str());
-                succeeded = succeeded && match[j+1].str() == EXPECTED_RESULTS[i][j];
-            }
+            int digit = std::stoi(match[0].str());
+            int variance = abs(EXPECTED_RESULTS[i][1] - std::stoi(match[2].str()));
+            EXPECT_EQ(EXPECTED_RESULTS[i][0], digit);
+            EXPECT_GE(EXPECTED_RESULTS[i][2], variance);
+            bool succeeded = (digit == EXPECTED_RESULTS[i][0]) && (EXPECTED_RESULTS[i][2] >= variance);
             _testScore += succeeded ? 2 : 0;
         } else {
             std::cerr << "No match for row " << (i + 1) << std::endl;
