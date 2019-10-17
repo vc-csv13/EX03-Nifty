@@ -1,6 +1,6 @@
 ## Exercise: Nifty (25 Points)
 
-The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch.
+The objective of this project is to create your first C++ function and familiarize your self with creating applications from scratch and reading data from files.
  
 ### Problem Description
 
@@ -27,17 +27,9 @@ in more detail in Chapter 9.
 
 ### Getting Started
 
-The first thing you will need to do is accept the invitation to this assignment
-from GitHub Classroom. You can click [here](https://classroom.github.com/a/BsNR5j9E) to accept the invitation. 
-
-Be sure that you accept the invitation first and use the URL from
-the your new project when you clone it in CLion.
-
-### Getting Started
-
 The first thing you will need to do is accept the invitation to this 
 assignment from GitHub Classroom. You can click 
-[here](https://classroom.github.com/a/58TIHTBb) to accept the 
+[here](https://classroom.github.com/a/CQ2ZmmJ2) to accept the 
 invitation, and get started.
 
 Be sure that you accept the invitation first and use the URL to your new project when you clone it in CLion. After copying
